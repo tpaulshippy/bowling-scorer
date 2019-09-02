@@ -1,3 +1,4 @@
-interface IBowler extends IScorer {
-    hit(pins: number): void;
+import IScorer from './IScorer';
+export default interface IBowler extends IScorer {
+    Hit(pins: number): void;
 }

@@ -1,3 +1,3 @@
-interface IScorer {
-    score(): number;
+export default interface IScorer {
+    Score(): number;
 }

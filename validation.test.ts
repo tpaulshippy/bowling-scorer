@@ -8,7 +8,7 @@ it("throws error when negative number input", () => {
     // WHEN
     function bowl() {
         // Try to bowl a negative number
-        game.hit(-2);
+        game.Hit(-2);
     }
     // THEN
     // Expect an error
@@ -23,7 +23,7 @@ it("throws error when more than 10 pins are hit in one attempt", () => {
     // WHEN
     function bowl() {
         // Try to hit eleven
-        game.hit(11);
+        game.Hit(11);
     }
     // THEN
     // Expect an error
@@ -31,7 +31,7 @@ it("throws error when more than 10 pins are hit in one attempt", () => {
 
 });
 
-it("throws error when more than 10 pins are hit in two successive attempts (where first is not a strike)", () => {
+it("throws error when more than 10 pins are hit in two successive attempts where first is not a strike", () => {
     // GIVEN
     // Initialize game
     const game = new BowlingGame();
@@ -39,12 +39,12 @@ it("throws error when more than 10 pins are hit in two successive attempts (wher
     // WHEN
     function bowl() {
         // Try to hit eleven in two attempts
-        game.hit(2);
-        game.hit(9);
+        game.Hit(2);
+        game.Hit(9);
     }
     // THEN
     // Expect an error
-    expect(bowl).toThrowError(/too many/);
+    expect(bowl).toThrowError(/too many pins hit in open frame/);
 
 });
 
@@ -56,10 +56,10 @@ it("throws error when more than 10 pins are hit in two successive attempts after
 
     // WHEN
     function bowl() {
-        game.hit(10);
+        game.Hit(10);
         // Try to hit eleven in two attempts
-        game.hit(2);
-        game.hit(9);
+        game.Hit(2);
+        game.Hit(9);
     }
     // THEN
     // Expect an error
@@ -76,17 +76,20 @@ it("throws error when game is over after ten frames", () => {
     function bowl() {
         // Try to hit after game is over
         for (let i = 0; i < 10; i++) {
-            game.hit(0);
-            game.hit(0);
+            game.Hit(0);
+            game.Hit(0);
         }
-        game.hit(1);
+        game.Hit(1);
+        console.log(game);
+
     }
     // THEN
     // Expect an error
     expect(bowl).toThrowError(/game over/);
 
+
 });
-it("throws error when game is over after ten frames but allow extra throw when spare is in tenth frame", () => {
+it("throws error when game is over but allow extra throw when spare is in tenth frame", () => {
     // GIVEN
     // Initialize game
     const game = new BowlingGame();
@@ -96,14 +99,14 @@ it("throws error when game is over after ten frames but allow extra throw when s
     function bowl() {
         // Try to hit after game is over
         for (let i = 0; i < 10; i++) {
-            game.hit(9);
+            game.Hit(9);
             throwCount++;
-            game.hit(1);
+            game.Hit(1);
             throwCount++;
         }
-        game.hit(1);
+        game.Hit(1);
         throwCount++;
-        game.hit(1);
+        game.Hit(1);
         throwCount++;
     }
     // THEN
@@ -112,7 +115,7 @@ it("throws error when game is over after ten frames but allow extra throw when s
     // Expect 21 throws
     expect(throwCount).toEqual(21);
 });
-it("throws error when game is over after ten frames but allow extra two throws when strike is in tenth frame", () => {
+it("throws error when game is over but allow extra two throws when strike is in tenth frame", () => {
     // GIVEN
     // Initialize game
     const game = new BowlingGame();
@@ -122,14 +125,14 @@ it("throws error when game is over after ten frames but allow extra two throws w
     function bowl() {
         // Try to hit after game is over
         for (let i = 0; i < 10; i++) {
-            game.hit(10);
+            game.Hit(10);
             throwCount++;
         }
-        game.hit(1);
+        game.Hit(1);
         throwCount++;
-        game.hit(1);
+        game.Hit(1);
         throwCount++;
-        game.hit(1);
+        game.Hit(1);
         throwCount++;
     }
     // THEN
