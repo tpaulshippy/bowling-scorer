@@ -2,8 +2,10 @@ export default class Frame {
     constructor(index: number) {
         this.Index = index;
         this.Hits = [];
+        this.ScoreBonus = [];
     }
     Index: number;
+    ScoreBonus: number[];
     Hits: number[];
 
     AddToFrame(pins: number): void {
@@ -17,9 +19,11 @@ export default class Frame {
         if (this.Hits.length === 0) {
             return 0;
         }
-        return this.Hits.reduce((total: number, num: number): number => {
-            return total + num;
-        });
+        return this.Hits.reduce(sum);
+    }
+
+    Score(): number {
+        return this.TotalPins() + (this.ScoreBonus.length > 0 ? this.ScoreBonus.reduce(sum) : 0);
     }
 
     IsClosed(): boolean {
@@ -54,9 +58,12 @@ export default class Frame {
             throw new Error("too many pins hit")
         }
         if (!this.IsClosed() && this.Index < 9 && this.TotalPins() + pins > 10) {
-            console.error(this);
             throw new Error(`too many pins hit in open frame ${this.Index}`)
         }
         // TODO: Validate tenth frame
     }
+}
+
+const sum = (total: number, num: number): number => {
+    return total + num;
 }

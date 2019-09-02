@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scores perfect game 1`] = `
+BowlingGame {
+  "CurrentFrame": Frame {
+    "Hits": Array [
+      10,
+      10,
+      10,
+    ],
+    "Index": 9,
+    "ScoreBonus": Array [],
+  },
+  "Frames": Array [
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 0,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 1,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 2,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 3,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 4,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 5,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 6,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 7,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 8,
+      "ScoreBonus": Array [
+        10,
+        10,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+        10,
+        10,
+      ],
+      "Index": 9,
+      "ScoreBonus": Array [],
+    },
+  ],
+}
+`;
+
+exports[`scores two strikes and then all nines and spares 1`] = `
+BowlingGame {
+  "CurrentFrame": Frame {
+    "Hits": Array [
+      9,
+      1,
+      9,
+    ],
+    "Index": 9,
+    "ScoreBonus": Array [],
+  },
+  "Frames": Array [
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 0,
+      "ScoreBonus": Array [
+        10,
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        10,
+      ],
+      "Index": 1,
+      "ScoreBonus": Array [
+        9,
+        1,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 2,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 3,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 4,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 5,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 6,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 7,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+      ],
+      "Index": 8,
+      "ScoreBonus": Array [
+        9,
+      ],
+    },
+    Frame {
+      "Hits": Array [
+        9,
+        1,
+        9,
+      ],
+      "Index": 9,
+      "ScoreBonus": Array [],
+    },
+  ],
+}
+`;
