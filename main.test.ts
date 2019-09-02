@@ -1,3 +1,4 @@
+import BowlingGame from './BowlingGame';
 it("scores perfect game", () => {
     // GIVEN
     // Initialize game

@@ -1,0 +1,3 @@
+interface IScorer {
+    score(): number;
+}

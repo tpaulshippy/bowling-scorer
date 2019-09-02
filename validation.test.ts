@@ -1,3 +1,5 @@
+import BowlingGame from './BowlingGame';
+
 it("throws error when negative number input", () => {
     // GIVEN
     // Initialize game
