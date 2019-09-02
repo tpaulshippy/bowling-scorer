@@ -1,0 +1,16 @@
+{
+  "name": "bowlingscorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  }
+}
