@@ -24,6 +24,7 @@ export default class BowlingGame implements IBowler {
 
         for (let index = 0; index < this.Frames.length; index++) {
             const frame = this.Frames[index];
+            frame.ScoreBonus = [];
 
             if (frame.Index < 9) {
                 framePlusOne = this.Frames[index + 1];
@@ -64,6 +65,50 @@ export default class BowlingGame implements IBowler {
         return currentScore;
     }
 
+    ShowState(pins: number, score: number) {
+        let scoreOutput = "FRAMES\n";
+        for (let i = 0; i < 10; i++) {
+            const frameNumber = i + 1;
+            scoreOutput += `[${frameNumber.toString().padStart(2, '0')}] `
+        }
+        scoreOutput += `\n`;
+        for (let i = 0; i < 10; i++) {
+            if (this.Frames.length > i) {
+                const frame = this.Frames[i];
+                scoreOutput += `[${stringifyScore(frame)}] `
+            }
+            else {
+                scoreOutput += `[  ] `
+            }
+        }
+        console.log(scoreOutput);
+
+        console.log(`Your current score is ${score}`);
+
+        if (this.CurrentFrame.Hits[0] === 10) {
+            console.log("Nice strike!");
+        }
+        else if (this.CurrentFrame.TotalPins() == 10) {
+            console.log("Nice spare!");
+        }
+        else if (pins === 0) {
+            console.log("Aww, gutter ball.");
+        }
+
+    }
+
 
 }
 
+function stringifyScore(frame: Frame) {
+    if (frame.TotalPins() < 10) {
+        return frame.Score().toString().padStart(2, '0');
+    }
+    else if (frame.Hits[0] === 10) {
+        return ' X';
+    }
+    else if (frame.TotalPins() === 10) {
+        return ' /';
+    }
+
+}

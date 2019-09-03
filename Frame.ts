@@ -58,7 +58,7 @@ export default class Frame {
             throw new Error("too many pins hit")
         }
         if (!this.IsClosed() && this.Index < 9 && this.TotalPins() + pins > 10) {
-            throw new Error(`too many pins hit in open frame ${this.Index}`)
+            throw new Error(`too many pins hit in open frame ${this.Index + 1}`)
         }
         // TODO: Validate tenth frame
     }
